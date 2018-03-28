@@ -29,12 +29,6 @@ pubsub.prototype = {
   }
 }
 
-function reverseString(str) {
-  let newstr = str.replace(/\s+/g,' ');
-  return newstr.split(' ').reverse().join(' ');
-}
-
-
 let single = (function () {
   let unique;
 
@@ -48,7 +42,6 @@ let single = (function () {
   function constructor() {
     // 初始化代码
   }
-
   return {
     getInstance
   }
@@ -70,21 +63,3 @@ function sum() {
 }
 
 console.log(sum(1)(2, 3)(4, 5, 6));
-
-
-function loadXML() {
-  let xhr;
-  if (window.XMLHttpRequest) {
-    xhr = new XMLHttpRequest();
-  }
-  else {
-    xhr = new ActiveXObject('Microsoft.XMLHTTP');
-  }
-  xhr.onreadystatechange = function () {
-    if (xhr.status == 200 && xhr.readyState == 4) {
-      let inner = xhr.responseText;
-    }
-  }
-  xhr.open('GET', 'www.baidu.com', true);
-  xhr.send();
-}

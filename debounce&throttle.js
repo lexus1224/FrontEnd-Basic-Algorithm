@@ -10,15 +10,23 @@ function debounce(method, delay) {
   }
 }
 
-function throttle(method, duration) {
-  let start = new Date();
+function throttle(method, delay, duration) {
+  let start = new Date(),
+      timer = null;
   return function () {
     let now = new Date();
     let args = Array.prototype.slice.call(arguments);
     let ctx = this;
+    clearTimeout(timer);
     if ((now - start) >= duration) {
       method.apply(ctx, args);
       start = now;
+    }
+    else {
+      timer = setTimeout(() => {
+        method.apply(ctx, args);
+        start = now;
+      }, delay)
     }
   }
 }
@@ -28,6 +36,6 @@ function clk() {
 }
 
 let div = document.querySelector('.parent');
-div.onclick = throttle(clk, 3000);
+div.onclick = throttle(clk, 5000, 7000);
 
 
