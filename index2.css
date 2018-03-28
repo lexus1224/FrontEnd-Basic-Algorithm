@@ -1,38 +1,20 @@
-body,html{
+body, html {
     padding: 0;
     margin: 0;
     font-size: 14px;
     color: #000000;
 }
 
-.container{
-    /*float: left;*/
-    display: table-cell;
-    vertical-align: middle;
-    height: 800px;
-    /*line-height: 100%;*/
-    text-align: center;
+#container{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
-
-.left{
-    /*float: left;*/
-    font-size: 30px;
-    /*position: absolute;*/
-    /*vertical-align: middle;*/
-    /*display: inline-block;*/
-    width: 200px;
-    /*height: 10em;*/
+.div{
+    width: 400px;
     background-color: #999999;
 
 }
 
-.main{
-    /*position: absolute;*/
-    /*vertical-align: middle;*/
-    /*display: table-cell;*/
-    /*width: 100px;*/
-    /*height: 400px;*/
-    /*background-color: aquamarine;*/
-}
 
