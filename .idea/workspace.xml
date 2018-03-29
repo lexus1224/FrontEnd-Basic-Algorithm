@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d64fb86-7eaf-4c69-9929-1aa556d4e463" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/designPattern.js" afterPath="$PROJECT_DIR$/designPattern.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="designPattern.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/designPattern.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -99,8 +96,8 @@
         <option value="$PROJECT_DIR$/eventHandler.js" />
         <option value="$PROJECT_DIR$/currying.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/designPattern.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/designPattern.js" />
       </list>
     </option>
   </component>
@@ -273,12 +270,12 @@
       <workItem from="1508237037060" duration="1695000" />
       <workItem from="1508745839165" duration="332000" />
       <workItem from="1521962961104" duration="3094000" />
-      <workItem from="1522142972988" duration="28013000" />
+      <workItem from="1522142972988" duration="28846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74332000" />
+    <option name="totallyTimeSpent" value="75165000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -768,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/designPattern.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
           <folding />
         </state>
       </provider>
