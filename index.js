@@ -46,20 +46,3 @@ let single = (function () {
     getInstance
   }
 })();
-
-
-function sum() {
-  let args = [].slice.call(arguments);
-  let fn = function () {
-    let newargs = args.concat([].slice.call(arguments));
-    return sum(...newargs);
-  };
-  fn.toString = function () {
-    return args.reduce((a, b) => {
-      return a * b
-    }, 1);
-  }
-  return fn;
-}
-
-console.log(sum(1)(2, 3)(4, 5, 6));

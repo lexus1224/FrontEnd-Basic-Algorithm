@@ -1,12 +1,18 @@
-function eventHandler(element, type, handler) {
+function eventHandler(element, type, handler, capture) {
   if (element.addEventListener) {
-    element.addEventListener(type, handler);
+    element.addEventListener(type, function (para) {
+      handler.call(element, para)
+    }, capture);
   }
   else if (element.attachEvent) {
-    element.attachEvent('on' + type, handler)
+    element.attachEvent('on' + type, function (para) {
+      handler.call(element, para)
+    })
   }
   else {
-    element['on' + type] = handler;
+    element['on' + type] = function (para) {
+      handler.call(element, para)
+    };
   }
 }
 
