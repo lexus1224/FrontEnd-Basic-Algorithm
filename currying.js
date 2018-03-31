@@ -5,14 +5,14 @@ let curry = function (fn) {
     if (arguments.length === 0) {
       return fn.apply(this, _args);
     }
-    Array.prototype.push.apply(_args, Array.prototype.slice.call(arguments));
-    // _args = _args.concat([].slice.call(arguments));
+    // Array.prototype.push.apply(_args, Array.prototype.slice.call(arguments));
+    _args = _args.concat([].slice.call(arguments));
     return arguments.callee;
   }
 
-  f.toString = function () {
-    return fn.apply(this, _args)
-  };
+  // f.toString = function () {
+  //   return fn.apply(this, _args)
+  // };
 
   return f;
 };
@@ -28,3 +28,18 @@ function add() {
 let curryAdd = curry(add);
 curryAdd(1, 2)(3)(4)(5, 6, 7);
 console.log(curryAdd());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

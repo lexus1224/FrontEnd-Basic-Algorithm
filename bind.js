@@ -7,8 +7,10 @@ Function.prototype.bind = function (oThis) {
       fNOP = function () {
       },
       fBound = function () {
-        return fToBind.apply(this instanceof fNOP ? this : oThis || window, args.concat(Array.prototype.slice.call(arguments)));
+        return fToBind.apply(this instanceof fNOP ? this : oThis, args.concat(Array.prototype.slice.call(arguments)));
       };
   fNOP.prototype = this.prototype;
   fBound.prototype = new fNOP();
+
+  return fBound;
 };

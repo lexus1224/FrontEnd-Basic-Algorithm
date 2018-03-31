@@ -2,8 +2,8 @@ function deepClone(obj) {
   if (!obj || typeof obj !== 'object')
     return obj;
   let cloneObj = obj.constructor === Array ? [] : {};
-  for (let item in cloneObj)
-    cloneObj[item] = Object.prototype.toString.call(obj[item]) === '[object Object]' ? deepClone(obj[item]) : obj[item];
+  for (let item in obj)
+    cloneObj[item] = typeof obj[item] ==='object'? deepClone(obj[item]) : obj[item];
   return cloneObj;
 }
 
@@ -14,7 +14,7 @@ let obj = {
   d: /\d/,
   e: new Date(),
   f: {
-    x: true,
+    x: [1,2,3],
     y: {
       z1: 'zz',
       z2: 123
@@ -25,5 +25,21 @@ let obj = {
   },
   h: [1, 2, 3, 'shenme']
 };
+let newobj = deepClone(obj)
+console.log();
 
-console.log(deepClone(obj));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
