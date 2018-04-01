@@ -38,4 +38,3 @@ function clk() {
 let div = document.querySelector('.parent');
 div.onclick = throttle(clk, 5000, 7000);
 
-

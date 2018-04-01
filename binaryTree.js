@@ -3,11 +3,9 @@ function Node(data, left, right) {
   this.data = data;
   this.left = left;
   this.right = right;
-  this.show = show;
-}
-
-function show() {
-  return this.data;
+  this.show = function () {
+    return this.data;
+  }
 }
 
 // 二叉树构造函数
@@ -20,10 +18,10 @@ function BST() {
 // 插入函数
 function insert(data) {
   let inode = new Node(data, null, null);
-  if (this.node === null)
-    this.node = inode;
+  if (this.root === null)
+    this.root = inode;
   else {
-    let current = this.node;
+    let current = this.root;
     while (true) {
       if (data < current.data) {
         if (current.left === null) {
@@ -35,7 +33,7 @@ function insert(data) {
       }
       else {
         if (current.right === null) {
-          current.left = inode;
+          current.right = inode;
           break;
         }
         else

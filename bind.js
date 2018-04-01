@@ -9,7 +9,7 @@ Function.prototype.bind = function (oThis) {
       fBound = function () {
         return fToBind.apply(this instanceof fNOP ? this : oThis, args.concat(Array.prototype.slice.call(arguments)));
       };
-  fNOP.prototype = this.prototype;
+  fNOP.prototype = fToBind.prototype;
   fBound.prototype = new fNOP();
 
   return fBound;

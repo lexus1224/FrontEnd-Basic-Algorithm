@@ -3,8 +3,8 @@ let dupArr = [9, undefined, 6, 6, 6, 4, 'n', 1, 6, 5, 7, 9, undefined, 8, 4, 2, 
 function removeDup1(dupArr) {
   let arr = dupArr.slice();
   arr = arr.sort();
-  for (let key = 0; key < arr.length; key++) {
-    if (key > 0 && arr[key] === arr[key - 1]) {
+  for (let key = 1; key < arr.length; key++) {
+    if (arr[key] === arr[key - 1]) {
       arr.splice(key, 1);
       key--;
     }
