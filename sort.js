@@ -1,4 +1,4 @@
-let sortArr = [9, 6, 4, 1, 5, 3, 8, 2, 7];
+let sArr = [9, 6, 4, 1, 5, 3, 8, 2, 7];
 
 function swap(arr, i, j) {
   let temp = arr[i];
@@ -88,4 +88,29 @@ function partition(arr, low, high) {
   return low;
 }
 
-console.log(sortArr);
+function mergeSort(arr) {
+  let length = arr.length;
+  if (length < 2)
+    return arr;
+  let mid = Math.floor(length / 2),
+      left = arr.slice(0, mid),
+      right = arr.slice(mid);
+  return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge(left, right) {
+  let mArr = [];
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] <= right[0])
+      mArr.push(left.shift());
+    else
+      mArr.push(right.shift());
+  }
+  if (left.length > 0)
+    mArr.concat(left);
+  else if (right.length > 0)
+    mArr.concat(right);
+  return mArr;
+}
+
+console.log(mergeSort(sArr));

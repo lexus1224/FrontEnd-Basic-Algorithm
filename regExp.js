@@ -1,9 +1,9 @@
 function regexp(str) {
-  let reg = /\d+/gi;
+  let reg = /^http[s]?:\/\/([\w-]+.)+[\w-]+([\w&?/=%#]+)*$/i;
   let res;
-  while (res = reg.exec(str)) {
-    console.log(res)
-  }
+
+    console.log(str.match(reg))
+
 }
 
-regexp("lihy37@mail2.sys321u.ed434u.c11n")
+regexp("https://space.bilibili.com/28152409?from=search&seid=9429306781350138685#/video")
