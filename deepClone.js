@@ -2,9 +2,9 @@ function deepClone(obj) {
   if (!obj || typeof obj !== 'object')
     return obj;
   let cloneObj = obj.constructor === Array ? [] : {};
-  for (let item in obj){
-    if(obj.hasOwnProperty(item))
-      cloneObj[item] = typeof obj[item] ==='object'? deepClone(obj[item]) : obj[item];
+  for (let key in obj){
+    if(obj.hasOwnProperty(key))
+      cloneObj[key] = typeof obj[key] ==='object'? deepClone(obj[key]) : obj[key];
   }
   return cloneObj;
 }

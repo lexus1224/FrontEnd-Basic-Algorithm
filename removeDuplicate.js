@@ -14,38 +14,28 @@ function removeDup1(dupArr) {
 
 function removeDup2(dupArr) {
   let arr = dupArr.slice();
-  let newArr = [];
-  for (let val of arr) {
-    if (newArr.indexOf(val) === -1)
-      newArr.push(val);
-  }
+  let newArr = arr.filter((val, index, arr) => {
+    return arr.indexOf(val) === index;
+  });
   console.log(newArr);
 }
 
 function removeDup3(dupArr) {
   let arr = dupArr.slice();
-  let arrSet = new Set();
-  for (let key = 0; key < arr.length; key++) {
-    if (arrSet.has(arr[key])) {
-      arr.splice(key, 1);
-      key--;
-    }
-    else
-      arrSet.add(arr[key]);
-  }
-  console.log(arr);
+  let newArr = Array.from(new Set(arr));
+  console.log(newArr);
 }
 
 function removeDup4(dupArr) {
   let arr = dupArr.slice();
   let arrObj = {};
   for (let key = 0; key < arr.length; key++) {
-    if (arrObj[arr[key]] !== undefined) {
+    if (arrObj.hasOwnProperty(arr[key])) {
       arr.splice(key, 1);
       key--;
     }
     else
-      arrObj[arr[key]] = 1;
+      arrObj[arr[key]] = true;
   }
   console.log(arr);
 }
@@ -63,4 +53,5 @@ function removeDup5(dupArr) {
   console.log(arr);
 }
 
-// removeDup5(dupArr);
+// removeDup2(dupArr);
+// removeDup3(dupArr);

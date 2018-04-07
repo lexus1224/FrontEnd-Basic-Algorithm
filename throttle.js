@@ -11,15 +11,13 @@ function debounce(method, delay) {
 }
 
 function throttle(method, delay, duration) {
-  let start,
+  let start = 0,
       timer = null;
   return function () {
     let now = new Date();
     let args = Array.prototype.slice.call(arguments);
     let ctx = this;
     clearTimeout(timer);
-    if(!start)
-      start = now;
     if ((now - start) >= duration) {
       method.apply(ctx, args);
       start = now;

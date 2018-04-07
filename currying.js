@@ -10,9 +10,9 @@ let curry = function (fn) {
     return arguments.callee;
   }
 
-  // f.toString = function () {
-  //   return fn.apply(this, _args)
-  // };
+  f.valueOf = function () {
+    return fn.apply(this, _args)
+  };
 
   return f;
 };
@@ -26,8 +26,9 @@ function add() {
 }
 
 let curryAdd = curry(add);
-curryAdd(1, 2)(3)(4)(5, 6, 7);
-console.log(curryAdd());
+curryAdd(1, 2)(3);
+curryAdd(4)(6, 7);
+console.log()
 
 
 
