@@ -1,3 +1,22 @@
+function Promise(fn) {
+  var promise = this,
+      value = null;
+  promise._resolves = [];
+
+  this.then = function (onFulfilled) {
+    promise._resolves.push(onFulfilled);
+    return this;
+  };
+
+  function resolve(value) {
+    promise._resolves.forEach(function (callback) {
+      callback(value);
+    });
+  }
+
+  fn(resolve);
+}
+
 function myPromise(fn) {
   let promise = this;
   promise._resolves = [];

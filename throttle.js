@@ -11,7 +11,7 @@ function debounce(method, delay) {
 }
 
 function throttle(method, delay, duration) {
-  let start = 0,
+  let start = new Date(),
       timer = null;
   return function () {
     let now = new Date();
@@ -36,4 +36,4 @@ function clk() {
 }
 
 let div = document.querySelector('.parent');
-div.onclick = throttle(clk, 5000, 7000);
+div.onclick = throttle(clk, 2000, 5000);
