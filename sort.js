@@ -7,7 +7,7 @@ function swap(arr, i, j) {
 }
 
 function insertSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 1; i < arr.length; i++) {
     let rec = arr[i], pos = 0;
     for (let j = i - 1; j >= 0; j--) {
       if (arr[j] > rec) {
@@ -40,14 +40,14 @@ function selectSort(arr) {
 
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    let sortflag = true;
+    let sorted = true;
     for (let j = 0; j < arr.length - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
-        sortflag = false;
+        sorted = false;
       }
     }
-    if (sortflag)
+    if (sorted)
       break;
   }
 }

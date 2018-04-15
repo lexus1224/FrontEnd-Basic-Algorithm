@@ -23,6 +23,7 @@ function removeDup2(dupArr) {
 function removeDup3(dupArr) {
   let arr = dupArr.slice();
   let newArr = Array.from(new Set(arr));
+  // let newArr = [...new Set(arr)];
   console.log(newArr);
 }
 

@@ -18,17 +18,16 @@ let curry = function (fn) {
 };
 
 function add() {
-  let sum = 0;
-  for (let i = 0, len = arguments.length; i < len; i++) {
-    sum += arguments[i];
-  }
-  return sum;
+  let arr = Array.from(arguments);
+  return arr.reduce(function (total, now) {
+    return total + now;
+  });
 }
 
 let curryAdd = curry(add);
 curryAdd(1, 2)(3);
 curryAdd(4)(6, 7);
-console.log()
+console.log(curryAdd())
 
 
 

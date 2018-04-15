@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>test</title>
     <style>
         body, html {
@@ -11,67 +12,48 @@
         .parent {
             width: 100%;
             height: 500px;
-            line-height: 500px;
-            /*text-align: center;*/
-            text-align: center;
-            font-size: 0;
+            position: relative;
         }
 
-        .left {
-            text-align: center;
-            width: 100px;
-            /*height: 20px;*/
-            background-color: aquamarine;
-            /*margin-left: -100%;*/
-            /*position: relative;*/
-            /*left: -100px;*/
+        .input {
+            height: 300px;
+            width: 400px;
         }
-
-        .center {
-            text-align: center;
-            /*height: 30px;*/
+        .show{
+            width: 370px;
+            height: 100px;
             background-color: darkorange;
-            /*position: absolute;*/
-            /*width: 100%;*/
         }
 
-        .right {
-            text-align: center;
-            width: 200px;
-            height: 50px;
-            background-color: burlywood;
-            /*margin-left: -200px;*/
-            /*position: relative;*/
-            /*right: -200px;*/
-        }
-
-        .float {
-            /*float: left;*/
-        }
-
-        .child {
-            font-size: 15px;
-            display: inline-block;
-            background-color: burlywood;
-            vertical-align: middle;
-            /*text-align: center;*/
-            color: red;
-            width: 200px;
-            line-height: 200px;
-            height: 200px;
-        }
     </style>
 </head>
 <body>
 <div class="parent" style="background-color: lightgrey;">
-    <span class="child">haha1</span>
+    <!--<div class="child1">div1</div>-->
+    <div class="show"></div>
+    <textarea class="input" name="" id=""></textarea>
+    <canvas width="100" height="100"></canvas>
+    <!--<img class="child" src="lhy_resume_pic.jpg" width="100" alt="">-->
+    <!--<img class="child" src="lhy_resume_pic.jpg" width="100" alt="">-->
+    <!--<img class="child" src="lhy_resume_pic.jpg" width="100" alt="">-->
     <!--<div class="center float">cercentercentercenter</div>-->
     <!--<div class="left float">left</div>-->
     <!--<div class="right float">right</div>-->
+    <iframe src="b.com" frameborder="0">
+
+    </iframe>
 </div>
 <script>
+  document.domain = 'a.com';
+  var ifr = document.querySelector('iframe');
+  ifr.src = 'http://www.script.a.com/b.html';
+  ifr.onload = function(){
+    var doc = ifr.contentDocument || ifr.contentWindow.document;
+    //在这里操作doc，也就是b.html
+    ifr.onload = null;
+  };
 
 </script>
-<script src="throttle.js"></script>
+<!--<script src="currying.js"></script>-->
 </body>
 </html>

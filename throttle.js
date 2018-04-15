@@ -17,7 +17,10 @@ function throttle(method, delay, duration) {
     let now = new Date();
     let args = Array.prototype.slice.call(arguments);
     let ctx = this;
-    clearTimeout(timer);
+    if(timer){
+      clearTimeout(timer);
+      timer=null;
+    }
     if ((now - start) >= duration) {
       method.apply(ctx, args);
       start = now;
